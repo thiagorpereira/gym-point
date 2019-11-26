@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import AdminController from './app/controllers/AdminController';
+import SessionController from './app/controllers/SessionController';
 
 const routes = new Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ message: 'Hello World'});
-})
-routes.post('/admin', AdminController.store);
+
+routes.post('/admins', AdminController.store);
+routes.post('/sessions', SessionController.store);
 
 export default routes;
