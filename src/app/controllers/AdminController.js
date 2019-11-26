@@ -8,7 +8,9 @@ class AdminController {
     if (adminExists) {
       return res.status(400).json({ error: "Admin already exists"});
     }
+
     const { id, name, email } = await Admin.create(req.body);
+
     return res.json({ id, name , email});
 
   }
