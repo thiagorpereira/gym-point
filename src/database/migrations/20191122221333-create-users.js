@@ -1,13 +1,13 @@
-//'use strict';
+// 'use strict';
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('admins', {
       id: {
-        type:Sequelize.INTEGER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
-        primaryKey:true,
+        primaryKey: true,
       },
       name: {
         type: Sequelize.STRING,
@@ -29,13 +29,11 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
-      }
+      },
     });
-
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('admins')
-
-  }
+    return queryInterface.dropTable('admins');
+  },
 };
