@@ -19,10 +19,11 @@ class Admin extends Model {
       if (admin.password) {
         admin.password_hash = await bcrypt.hash(admin.password, 8);
       }
-    })
+    });
 
     return this;
   }
+
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }
